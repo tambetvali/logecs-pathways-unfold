@@ -1,15 +1,15 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X, BookOpen, Brain, Compass } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const navigation = [
-    { name: "Portals", href: "#portals", icon: Compass },
-    { name: "Materials", href: "#materials", icon: BookOpen },
-    { name: "Theory", href: "#theory", icon: Brain },
-    { name: "About", href: "#about", icon: BookOpen },
+    { name: "Logecs", href: "/logecs", icon: Compass },
+    { name: "Growth Theory", href: "/growth", icon: BookOpen },
+    { name: "Materials", href: "/materials", icon: Brain },
   ];
 
   return (
@@ -26,14 +26,14 @@ const Navigation = () => {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             {navigation.map((item) => (
-              <a
+              <Link
                 key={item.name}
-                href={item.href}
+                to={item.href}
                 className="text-muted-foreground hover:text-primary transition-colors duration-300 flex items-center gap-2"
               >
                 <item.icon className="w-4 h-4" />
                 {item.name}
-              </a>
+              </Link>
             ))}
           </div>
 
@@ -64,15 +64,15 @@ const Navigation = () => {
           <div className="md:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1 border-t border-border/50">
               {navigation.map((item) => (
-                <a
-                  key={item.name}
-                  href={item.href}
-                  className="block px-3 py-2 text-muted-foreground hover:text-primary transition-colors duration-300 flex items-center gap-2"
-                  onClick={() => setIsOpen(false)}
-                >
-                  <item.icon className="w-4 h-4" />
-                  {item.name}
-                </a>
+                  <Link
+                    key={item.name}
+                    to={item.href}
+                    className="block px-3 py-2 text-muted-foreground hover:text-primary transition-colors duration-300 flex items-center gap-2"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    <item.icon className="w-4 h-4" />
+                    {item.name}
+                  </Link>
               ))}
               <div className="px-3 pt-4">
                 <Button 
