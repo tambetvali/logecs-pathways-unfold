@@ -105,8 +105,8 @@ const Growth = () => {
                       <p className="text-muted-foreground leading-relaxed mb-4">
                         {theorem.description}
                       </p>
-                      <div className="bg-accent/5 border border-accent/20 rounded-lg p-4">
-                        <p className="text-sm font-medium text-accent-foreground">
+                      <div className="bg-muted/50 border border-border rounded-lg p-4">
+                        <p className="text-sm font-medium text-foreground">
                           Application: {theorem.application}
                         </p>
                       </div>
